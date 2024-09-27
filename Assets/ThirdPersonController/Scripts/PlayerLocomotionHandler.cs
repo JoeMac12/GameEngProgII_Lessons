@@ -1,8 +1,8 @@
 using Unity.VisualScripting;
-using UnityEditor.ShaderGraph;
+//using UnityEditor.ShaderGraph;
 using UnityEngine;
 
-// Sam Robichaud 
+// Sam Robichaud
 // NSCC Truro 2024
 // This work is licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
 public class PlayerLocomotionHandler : MonoBehaviour
@@ -29,7 +29,7 @@ public class PlayerLocomotionHandler : MonoBehaviour
     private Vector3 moveDirection;
     private Vector3 velocity;
     private bool isJumping = false; // Track if player is currently jumping
- 
+
 
     private void Awake()
     {
@@ -47,8 +47,8 @@ public class PlayerLocomotionHandler : MonoBehaviour
 
     private void HandlePlayerMovement()
     {
-     
-        
+
+
             // Normal movement calculation
             moveDirection = cameraTransform.forward * inputManager.verticalInput;
             moveDirection += cameraTransform.right * inputManager.horizontalInput;
@@ -85,7 +85,7 @@ public class PlayerLocomotionHandler : MonoBehaviour
 
             // Move the character controller
             characterController.Move(moveDirection * Time.deltaTime + velocity * Time.deltaTime);
-        
+
     }
 
     private void HandlePlayerRotation()
