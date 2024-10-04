@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Sam Robichaud
+// Sam Robichaud 
 // NSCC Truro 2024
 // This work is licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
@@ -15,7 +15,6 @@ public class LevelManager : MonoBehaviour
     public GameManager _gameManager;
     public PlayerManager _playerManager;
     public UIManager _uIManager;
-
 
     public int nextScene;
     public List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();

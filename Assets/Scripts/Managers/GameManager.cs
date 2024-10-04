@@ -6,15 +6,10 @@
 
 public class GameManager : MonoBehaviour
 {
-    
-
-
     [Header("Gameplay Info")]
     // store a ref to GamePlay specific variables here
     // Ammo/health/points etc 
     // Could also use static variables for those and just store a ref to them here.
-
-
 
     public GameObject startPosition;
 
@@ -25,8 +20,6 @@ public class GameManager : MonoBehaviour
     public UIManager _uIManager;
     public CameraManager _cameraManager;
     public LevelManager _levelManager;
-
-    
 
     public void Awake()
     {
@@ -39,13 +32,4 @@ public class GameManager : MonoBehaviour
         if (_levelManager == null) { Debug.LogError("LevelManager is not assigned to GameManager in the inspector!"); }
 
     }   
-
-
-
-
-
-
-
-
-
 }

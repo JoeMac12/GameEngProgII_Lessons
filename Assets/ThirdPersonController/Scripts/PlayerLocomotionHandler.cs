@@ -1,8 +1,7 @@
 using Unity.VisualScripting;
-//using UnityEditor.ShaderGraph;
 using UnityEngine;
 
-// Sam Robichaud
+// Sam Robichaud 
 // NSCC Truro 2024
 // This work is licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
 public class PlayerLocomotionHandler : MonoBehaviour
@@ -25,6 +24,7 @@ public class PlayerLocomotionHandler : MonoBehaviour
     public float rotationSpeed = 15f;
     public float gravity = -30f; // Gravity value to apply to the player
     public float jumpHeight = 3.0f; // Jump height
+    public static float moveSpeed;
 
     private Vector3 moveDirection;
     private Vector3 velocity;
@@ -49,42 +49,42 @@ public class PlayerLocomotionHandler : MonoBehaviour
     {
 
 
-            // Normal movement calculation
-            moveDirection = cameraTransform.forward * inputManager.verticalInput;
-            moveDirection += cameraTransform.right * inputManager.horizontalInput;
-            moveDirection.Normalize();
-            moveDirection.y = 0;
+        // Normal movement calculation
+        moveDirection = cameraTransform.forward * inputManager.verticalInput;
+        moveDirection += cameraTransform.right * inputManager.horizontalInput;
+        moveDirection.Normalize();
+        moveDirection.y = 0;
 
-            // Adjust speed based on sprinting, jogging, or walking
-            if (isSprinting)
-            {
-                moveDirection *= sprintingSpeed;
-            }
-            else if (inputManager.moveAmount >= 0.5f)
-            {
-                moveDirection *= joggingSpeed;
-            }
-            else
-            {
-                moveDirection *= walkingSpeed;
-            }
+        // Adjust speed based on sprinting, jogging, or walking
+        if (isSprinting)
+        {
+            moveDirection *= sprintingSpeed;
+        }
+        else if (inputManager.moveAmount >= 0.5f)
+        {
+            moveDirection *= joggingSpeed;
+        }
+        else
+        {
+            moveDirection *= walkingSpeed;
+        }
 
-            // Apply gravity
-            if (characterController.isGrounded)
+        // Apply gravity
+        if (characterController.isGrounded)
+        {
+            isJumping = false;
+            if (velocity.y < 0)
             {
-                isJumping = false;
-                if (velocity.y < 0)
-                {
-                    velocity.y = -2f; // Small downward force to stay grounded
-                }
+                velocity.y = -2f; // Small downward force to stay grounded
             }
-            else
-            {
-                velocity.y += gravity * Time.deltaTime; // Apply gravity when not grounded
-            }
+        }
+        else
+        {
+            velocity.y += gravity * Time.deltaTime; // Apply gravity when not grounded
+        }
 
-            // Move the character controller
-            characterController.Move(moveDirection * Time.deltaTime + velocity * Time.deltaTime);
+        // Move the character controller
+        characterController.Move(moveDirection * Time.deltaTime + velocity * Time.deltaTime);
 
     }
 
@@ -122,7 +122,7 @@ public class PlayerLocomotionHandler : MonoBehaviour
     {
         // Calculate the player's velocity magnitude, including both movement and vertical velocity (gravity/jumping)
         playerVelocity = characterController.velocity.magnitude;
+
+        moveSpeed = playerVelocity;
     }
-
-
 }

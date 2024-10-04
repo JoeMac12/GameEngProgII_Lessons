@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
-// Sam Robichaud
+// Sam Robichaud 
 // NSCC Truro 2024
 // This work is licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
@@ -113,13 +113,14 @@ public class UIManager : MonoBehaviour
 
         while (timer < fadeTime)
         {
-            loadingScreenCanvasGroup.alpha = Mathf.Lerp(1, 0, timer/fadeTime);
+            loadingScreenCanvasGroup.alpha = Mathf.Lerp(1, 0, timer / fadeTime);
             timer += Time.deltaTime;
             yield return null;
         }
 
         loadingScreenCanvasGroup.alpha = 0;
         LoadingScreen.SetActive(false);
+        loadingBar.fillAmount = 0;
 
         Debug.Log("Ending Fadeout");
     }

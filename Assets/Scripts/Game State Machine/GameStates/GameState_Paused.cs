@@ -20,10 +20,10 @@ public class GameState_Paused : IGameState
 
     public void UpdateState(GameStateManager gameStateManager)
     {
-        // Pressing ESC key will unpause the game, Switch to last state stored
+        // Pressing ESC key will Resume the game, Switch to last state stored
         if (gameStateManager._inputManager.isPauseKeyPressed)
         {
-            gameStateManager.UnPause();
+            gameStateManager.Resume();
         }
     }
 

@@ -59,10 +59,8 @@ public class CameraManager : MonoBehaviour
 
     private void HandleCamera()
     {
-        
-
         // Exit if there is no target
-        if (followTarget == null) return; //set a debug error
+        if (followTarget == null) return;
 
         // Update the camera rotation and distance
         UpdateCameraRotation();
