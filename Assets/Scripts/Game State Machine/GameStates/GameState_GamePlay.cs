@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-// Sam Robichaud 
+// Sam Robichaud
 // NSCC Truro 2024
 // This work is licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
@@ -24,10 +24,11 @@ public class GameState_GamePlay : IGameState
     public void UpdateState(GameStateManager gameStateManager)
     {
         if(gameStateManager._inputManager.isPauseKeyPressed)
-        {            
+        {
             gameStateManager.Pause();
+			gameStateManager._inputManager.isPauseKeyPressed = false;
         }
-        
+
 
     }
 
