@@ -386,6 +386,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 107
       objectReference: {fileID: 0}
+    - target: {fileID: 4210756486153637850, guid: ae9c871a384c055489718857a6fa21f4,
+        type: 3}
+      propertyPath: Ground.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210756486153637850, guid: ae9c871a384c055489718857a6fa21f4,
+        type: 3}
+      propertyPath: cubeFilter.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 4543545680812070715, guid: ae9c871a384c055489718857a6fa21f4,
         type: 3}
       propertyPath: m_IsActive
@@ -490,6 +500,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7456112056111635380, guid: ae9c871a384c055489718857a6fa21f4,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7505773918175679228, guid: ae9c871a384c055489718857a6fa21f4,
         type: 3}
