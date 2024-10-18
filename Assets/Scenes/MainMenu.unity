@@ -396,6 +396,11 @@ PrefabInstance:
       propertyPath: cubeFilter.m_Bits
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: 4210756486153637850, guid: ae9c871a384c055489718857a6fa21f4,
+        type: 3}
+      propertyPath: groundFilter.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 4543545680812070715, guid: ae9c871a384c055489718857a6fa21f4,
         type: 3}
       propertyPath: m_IsActive

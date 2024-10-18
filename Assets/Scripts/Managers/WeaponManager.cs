@@ -7,35 +7,51 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] Camera playerCam;
 
     [SerializeField] float defaultDistance = 10f;
-
     [SerializeField] LayerMask cubeFilter;
-    [SerializeField] LayerMask Ground;
+    [SerializeField] LayerMask groundFilter;
+
+    private Renderer lastHitRenderer = null;
 
     private void Start()
     {
         playerCam = Camera.main;
     }
 
-
     private void FixedUpdate()
     {
         float distance = defaultDistance;
+        Ray ray = new Ray(playerCam.transform.position, playerCam.transform.forward);
 
-        if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out RaycastHit hit, 10, Ground.value))
+        if (Physics.Raycast(ray, out RaycastHit groundHit, defaultDistance, groundFilter))
         {
-            distance = hit.distance;
+            distance = groundHit.distance;
         }
-        Debug.Log($"Distance is {distance}");
+        Debug.Log($"Raycast Distance {distance}");
 
-        Vector3 camPos = playerCam.transform.position;
-        Debug.DrawLine(camPos, camPos + playerCam.transform.forward * 10, Color.red);
+        Debug.DrawLine(playerCam.transform.position, playerCam.transform.position + playerCam.transform.forward * distance, Color.red);
 
-        RaycastHit[] hits = Physics.RaycastAll(playerCam.transform.position, playerCam.transform.forward, distance, cubeFilter.value);
-        foreach(RaycastHit hit2 in hits)
+        if (Physics.Raycast(ray, out RaycastHit hit, distance, cubeFilter))
         {
-            if(hit2.collider.TryGetComponent(out Renderer renderer))
+            Debug.Log($"Hit Object: {hit.collider.name}, Distance: {hit.distance}");
+
+            if (hit.collider.TryGetComponent(out Renderer renderer))
             {
                 renderer.material.color = Color.red;
+
+                if (lastHitRenderer != null && lastHitRenderer != renderer)
+                {
+                    lastHitRenderer.material.color = Color.blue;
+                }
+
+                lastHitRenderer = renderer;
+            }
+        }
+        else
+        {
+            if (lastHitRenderer != null)
+            {
+                lastHitRenderer.material.color = Color.blue;
+                lastHitRenderer = null;
             }
         }
     }
