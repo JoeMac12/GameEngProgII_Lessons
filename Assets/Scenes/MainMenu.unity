@@ -386,6 +386,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 107
       objectReference: {fileID: 0}
+    - target: {fileID: 2636979607250903871, guid: ae9c871a384c055489718857a6fa21f4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4210756486153637850, guid: ae9c871a384c055489718857a6fa21f4,
         type: 3}
       propertyPath: Ground.m_Bits

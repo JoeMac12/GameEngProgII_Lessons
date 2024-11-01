@@ -2005,9 +2005,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCam: {fileID: 0}
+  defaultDistance: 10
   cubeFilter:
     serializedVersion: 2
     m_Bits: 119
+  groundFilter:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &2764592941301778398
 GameObject:
   m_ObjectHideFlags: 0
