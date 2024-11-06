@@ -366,6 +366,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1215757398332645007, guid: ae9c871a384c055489718857a6fa21f4,
+        type: 3}
+      propertyPath: inputActionAsset
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: ae797a3d2ac90a744b0dd793c0f2d3d1,
+        type: 3}
     - target: {fileID: 2205287106811496120, guid: ae9c871a384c055489718857a6fa21f4,
         type: 3}
       propertyPath: m_Color.b
@@ -431,6 +437,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5557517958513767376, guid: ae9c871a384c055489718857a6fa21f4,
+        type: 3}
+      propertyPath: GameplayMessage
+      value: 
+      objectReference: {fileID: 783105078}
     - target: {fileID: 6764310266837264431, guid: ae9c871a384c055489718857a6fa21f4,
         type: 3}
       propertyPath: m_Color.b
@@ -924,6 +935,18 @@ LightingSettings:
   m_PVRTiledBaking: 0
   m_NumRaysToShootPerTexel: -1
   m_RespectSceneVisibilityWhenBakingGI: 0
+--- !u!114 &783105078 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7380595871334136530, guid: ae9c871a384c055489718857a6fa21f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 456610215}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

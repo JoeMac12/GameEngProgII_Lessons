@@ -26,6 +26,8 @@ public class UIManager : MonoBehaviour
     // Gameplay Specific UI Elements
     public Text LevelCount;
 
+    public Text GameplayMessage;
+
     [Header("Loading Screen UI Elements")]
     public CanvasGroup loadingScreenCanvasGroup;
     public Image loadingBar;
@@ -167,5 +169,10 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         DisableAllUIPanels();
         uiPanel.SetActive(true);
+    }
+
+    public void UpdateGamePlayMessage(string message)
+    {
+        GameplayMessage.text = message;
     }
 }
