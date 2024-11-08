@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
-// Sam Robichaud 
+// Sam Robichaud
 // NSCC Truro 2024
 // This work is licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     [Header("Gameplay UI Elements")]
     // Gameplay Specific UI Elements
     public Text LevelCount;
+    public Text GameplayMessage;
 
     [Header("Loading Screen UI Elements")]
     public CanvasGroup loadingScreenCanvasGroup;
@@ -167,5 +168,10 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         DisableAllUIPanels();
         uiPanel.SetActive(true);
+    }
+
+    public void UpdateGameplayMessage(string message)
+    {
+        GameplayMessage.text = message;
     }
 }

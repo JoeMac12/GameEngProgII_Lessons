@@ -12,8 +12,8 @@ public class InputManager : MonoBehaviour
 {
     // Script References
     [SerializeField] private PlayerLocomotionHandler playerLocomotionHandler;
-    [SerializeField] private CameraManager cameraManager; // Reference to CameraManager
-
+    [SerializeField] private CameraManager cameraManager;
+    [SerializeField] private InteractionManager interactionManager;
 
     [Header("Movement Inputs")]
     public float verticalInput;
@@ -30,16 +30,15 @@ public class InputManager : MonoBehaviour
 
     public void Look(InputAction.CallbackContext context)
     {
+        // Get mouse input for the camera
+        cameraInput = context.ReadValue<Vector2>();
 
-            // Get mouse input for the camera
-            cameraInput = context.ReadValue<Vector2>();
+        // Get scroll input for camera zoom
+        scrollInput = Input.GetAxis("Mouse ScrollWheel");
 
-            // Get scroll input for camera zoom
-            scrollInput = Input.GetAxis("Mouse ScrollWheel");
-
-            // Send inputs to CameraManager
-            cameraManager.zoomInput = scrollInput;
-            cameraManager.cameraInput = cameraInput;
+        // Send inputs to CameraManager
+        cameraManager.zoomInput = scrollInput;
+        cameraManager.cameraInput = cameraInput;
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -64,10 +63,17 @@ public class InputManager : MonoBehaviour
             playerLocomotionHandler.isSprinting = false;
     }
 
-
     public void Jump(InputAction.CallbackContext context)
     {
         if (context.performed)
-            playerLocomotionHandler.HandleJump(); // Trigger jump in locomotion handler
+            playerLocomotionHandler.HandleJump();
+    }
+
+    public void Interact(InputAction.CallbackContext context)
+    {
+        if (context.performed && interactionManager._interactionPossible)
+        {
+            interactionManager.Interact();
+        }
     }
 }
