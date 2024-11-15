@@ -7,6 +7,7 @@ public class Interactable : MonoBehaviour
     public enum InteractionType {Door, Button, Pickup}
 
     public InteractionType type;
+	public PickupObject objectName;
 
     public void Activate()
     {

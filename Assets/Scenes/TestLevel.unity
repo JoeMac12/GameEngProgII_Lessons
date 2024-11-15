@@ -922,6 +922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  objectName: {fileID: 11400000, guid: 706253c225bd4e04982fee4114b689ab, type: 2}
 --- !u!1 &84181711
 GameObject:
   m_ObjectHideFlags: 0
@@ -4285,6 +4286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  objectName: {fileID: 11400000, guid: 81bad3c1e06d95744b8ab1ddebd5e172, type: 2}
 --- !u!65 &513543693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5658,6 +5660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  objectName: {fileID: 11400000, guid: d16a7b596a74c5e46aab895c8d83686a, type: 2}
 --- !u!65 &943138988
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7162,6 +7165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  objectName: {fileID: 11400000, guid: 706253c225bd4e04982fee4114b689ab, type: 2}
 --- !u!1 &1207212589
 GameObject:
   m_ObjectHideFlags: 0
@@ -14762,6 +14766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  objectName: {fileID: 11400000, guid: d16a7b596a74c5e46aab895c8d83686a, type: 2}
 --- !u!65 &1420719362
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15942,6 +15947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  objectName: {fileID: 11400000, guid: 706253c225bd4e04982fee4114b689ab, type: 2}
 --- !u!1 &1583253799
 GameObject:
   m_ObjectHideFlags: 0
@@ -17246,6 +17252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  objectName: {fileID: 11400000, guid: d16a7b596a74c5e46aab895c8d83686a, type: 2}
 --- !u!65 &1690820445
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18873,6 +18880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  objectName: {fileID: 11400000, guid: 706253c225bd4e04982fee4114b689ab, type: 2}
 --- !u!1 &1909288072
 GameObject:
   m_ObjectHideFlags: 0
@@ -19983,6 +19991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  objectName: {fileID: 11400000, guid: 706253c225bd4e04982fee4114b689ab, type: 2}
 --- !u!43 &2142892736
 Mesh:
   m_ObjectHideFlags: 0

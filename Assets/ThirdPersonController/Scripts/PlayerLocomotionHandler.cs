@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-// Sam Robichaud 
+// Sam Robichaud
 // NSCC Truro 2024
 // This work is licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
 public class PlayerLocomotionHandler : MonoBehaviour
@@ -30,10 +30,19 @@ public class PlayerLocomotionHandler : MonoBehaviour
     private Vector3 velocity;
     private bool isJumping = false; // Track if player is currently jumping
 
+	[SerializeField] private CharacterStats playerStats;
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            playerStats.ShowName();
+        }
     }
 
     public void HandleAllPlayerMovement()

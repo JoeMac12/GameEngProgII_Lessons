@@ -26,7 +26,7 @@ public class WeaponManager : MonoBehaviour
         {
             distance = groundHit.distance;
         }
-        Debug.Log($"Raycast Distance {distance}");
+        //Debug.Log($"Raycast Distance {distance}");
 
         Debug.DrawLine(playerCam.transform.position, playerCam.transform.position + playerCam.transform.forward * distance, Color.red);
 

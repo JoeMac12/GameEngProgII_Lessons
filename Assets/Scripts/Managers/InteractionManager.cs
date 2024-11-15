@@ -59,18 +59,21 @@ public class InteractionManager : MonoBehaviour
 
     public void Interact()
     {
+		string itemName = targetInteractable.objectName.itemName;
+
         switch (targetInteractable.type)
         {
             case Interactable.InteractionType.Door:
                 target.SetActive(false);
+				Debug.Log("Opened: " + itemName);
                 break;
             case Interactable.InteractionType.Button:
                 target.SetActive(false);
-                Debug.Log("Button Pressed!");
+                Debug.Log("Pressed: " + itemName);
                 break;
             case Interactable.InteractionType.Pickup:
                 target.SetActive(false);
-                Debug.Log("Picked up item!");
+                Debug.Log("Picked up: " + itemName);
                 break;
         }
     }
