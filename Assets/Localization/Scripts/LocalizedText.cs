@@ -23,7 +23,7 @@ public class LocalizedText : MonoBehaviour
         localizedStr = new LocalizedString { TableReference = tableReference, TableEntryReference = localizationKey };
         LocalizationSettings.SelectedLocaleChanged += UpdateText;
 
-        var frenchLocale = LocalizationSettings.AvailableLocales.GetLocale("en"); // Start in en or fr
+        var frenchLocale = LocalizationSettings.AvailableLocales.GetLocale("fr"); // Start in en or fr
         LocalizationSettings.SelectedLocale = frenchLocale;
         UpdateText(frenchLocale);
     }
