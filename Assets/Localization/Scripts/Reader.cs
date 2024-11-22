@@ -12,6 +12,11 @@ public class Language
     public string quit;
     public string options;
     public string credits;
+    public string gameplayMessage;
+    public string gameStatTitle;
+    public string gameStatCount;
+    public string currentLevelTitle;
+    public string currentLevelID;
 }
 
 public class LanguageData
@@ -22,7 +27,7 @@ public class LanguageData
 public class Reader : MonoBehaviour
 {
     public TextAsset jsonFile;
-    public string currentLanguage;
+    public string currentLanguage = "en";
     private LanguageData languageData;
 
     public Text titleText;
@@ -31,9 +36,30 @@ public class Reader : MonoBehaviour
     public Text quitText;
     public Text creditsText;
 
+    public Text gameplayMessageText;
+    public Text gameStatTitleText;
+    public Text gameStatCountText;
+    public Text currentLevelTitleText;
+    public Text currentLevelIDText;
+
     private void Start()
     {
         languageData = JsonUtility.FromJson<LanguageData>(jsonFile.text);
+        SetLanguage(currentLanguage);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            ToggleLanguage();
+        }
+    }
+
+    private void ToggleLanguage()
+    {
+        // Toggle between English and French
+        currentLanguage = currentLanguage.ToLower() == "en" ? "fr" : "en";
         SetLanguage(currentLanguage);
     }
 
@@ -48,9 +74,14 @@ public class Reader : MonoBehaviour
                 optionsText.text = lang.options;
                 quitText.text = lang.quit;
                 creditsText.text = lang.credits;
+
+                gameplayMessageText.text = lang.gameplayMessage;
+                gameStatTitleText.text = lang.gameStatTitle;
+                gameStatCountText.text = lang.gameStatCount;
+                currentLevelTitleText.text = lang.currentLevelTitle;
+                currentLevelIDText.text = lang.currentLevelID;
                 return;
             }
         }
     }
 }
-

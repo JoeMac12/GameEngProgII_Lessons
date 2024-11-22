@@ -14,9 +14,6 @@ public class LocalizedText : MonoBehaviour
     private LocalizedString localizedStr;
     private Text textComponent;
 
-
-
-
     void Start()
     {
         textComponent = GetComponent<Text>();

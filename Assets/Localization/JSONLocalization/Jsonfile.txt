@@ -6,7 +6,12 @@
             "play": "Play",
             "quit": "Quit",
             "options": "Options",
-            "credits": "Credits"
+            "credits": "Credits",
+            "gameplayMessage": "Gameplay Message",
+            "gameStatTitle": "Statistics",
+            "gameStatCount": "Count: ",
+            "currentLevelTitle": "Current Level",
+            "currentLevelID": "Level "
         },
         {
             "lang": "fr",
@@ -14,7 +19,12 @@
             "play": "Jouer",
             "quit": "Quitter",
             "options": "Options",
-            "credits": "Crédits"
+            "credits": "Crédits",
+            "gameplayMessage": "Message de Gameplay",
+            "gameStatTitle": "Statistiques",
+            "gameStatCount": "Compte: ",
+            "currentLevelTitle": "Niveau Actuel",
+            "currentLevelID": "Niveau "
         }
     ]
 }
